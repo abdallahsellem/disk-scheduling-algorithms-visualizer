@@ -2,6 +2,7 @@ import React from 'react'
 import styling from "./HomePage.module.scss"
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
+import Footer from '../components/Footer';
 function HomePage() {
   const navigate = useNavigate();
   return (
@@ -13,7 +14,7 @@ function HomePage() {
         </div>
       <Button onClick={()=>navigate("/charts")} className={styling.startingButton} variant="outlined">Get Started</Button>
       </div>
-      
+      <Footer></Footer>
     </div>
   )
 }
