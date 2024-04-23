@@ -37,7 +37,9 @@ function InputData() {
       setReqData({ ...reqData, initial: event.target.value })
     }
     else {
-      setReqData({ ...reqData, maxtrack: event.target.value })
+      let mx=event.target.value-1 ;
+      console.log(mx)
+      setReqData({ ...reqData, maxtrack: mx})
     }
   };
 
@@ -242,7 +244,7 @@ function InputData() {
         }
         if (TracksBeforeProcessed.length != 0) {
 
-          for (let track = Math.min(...TracksBeforeProcessed); track >= Math.max(...TracksBeforeProcessed); track++) {
+          for (let track = Math.min(...TracksBeforeProcessed); track <= Math.max(...TracksBeforeProcessed); track++) {
             if (TracksBeforeProcessed.indexOf(track) > -1) {
 
               TracksAfterProcessed.push({ time: String(counter), value: track })
@@ -293,7 +295,7 @@ function InputData() {
         if (TracksBeforeProcessed.length != 0) {
           TracksAfterProcessed.push({ time: String(counter), value: Number(0) })
           counter++;
-          for (let track = Math.min(...TracksBeforeProcessed); track >= Math.max(...TracksBeforeProcessed); track++) {
+          for (let track = Math.min(...TracksBeforeProcessed); track <= Math.max(...TracksBeforeProcessed); track++) {
             if (TracksBeforeProcessed.indexOf(track) > -1) {
 
               TracksAfterProcessed.push({ time: String(counter), value: track })
